@@ -10,10 +10,9 @@ type Props = {
   onMarkdown: (content: string) => void;
 };
 
-const td = new TurndownService({
-  headingStyle: "atx",
-  codeBlockStyle: "fenced",
-});
+type Props = {
+  onMarkdown: (content: string) => void;
+};
 
 export default function DocumentUploadToMarkdown({ onMarkdown }: Props) {
   const [loading, setLoading] = useState(false);
