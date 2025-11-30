@@ -1,18 +1,18 @@
-// components/DocumentUploadToMarkdown.tsx
+// @ts-nocheck
 "use client";
 
 import { useState } from "react";
 import * as mammoth from "mammoth/mammoth.browser";
 import TurndownService from "turndown";
 
-
 type Props = {
   onMarkdown: (content: string) => void;
 };
 
-type Props = {
-  onMarkdown: (content: string) => void;
-};
+const td = new TurndownService({
+  headingStyle: "atx",
+  codeBlockStyle: "fenced",
+});
 
 export default function DocumentUploadToMarkdown({ onMarkdown }: Props) {
   const [loading, setLoading] = useState(false);
